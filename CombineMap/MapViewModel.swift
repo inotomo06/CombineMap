@@ -33,6 +33,7 @@ final class MapViewModel: ObservableObject {
     
     init() {
         $region
+            // Without it, the markers would look amazing.
             .debounce(for: 1, scheduler: DispatchQueue.main)
             .sink { region in
                 // Reset the array to reposition the pins once the map has been moved.
