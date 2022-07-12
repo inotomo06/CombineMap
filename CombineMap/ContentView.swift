@@ -6,11 +6,51 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 struct ContentView: View {
+    @StateObject private var mapViewModel = MapViewModel()
+    @EnvironmentObject var partialSheetManager: PartialSheetManager
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        ZStack {
+            MapView()
+            VStack {
+                Spacer()
+                
+                HStack {
+                    Spacer()
+                    // Button to return to original position.
+                    Button {
+                       
+                    } label: {
+                        Image(systemName: "dot.circle.and.hand.point.up.left.fill")
+                    }
+                    .frame(width: 60, height: 60)
+                    .background(Color.orange)
+                    .cornerRadius(60)
+                    .padding(20.0)
+                }
+                
+                HStack {
+                    Spacer()
+                    // search button
+                    Button {
+                         mapViewModel.isShowSearch.toggle()
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                            .frame(width: 60, height: 60)
+                            .background(Color.orange)
+                            .cornerRadius(60)
+                            .padding(20.0)
+                    }
+                    .partialSheet(isPresented: $mapViewModel.isShowSearch) {
+                        HalfModalView(isShowSearch: $mapViewModel.isShowSearch)
+                    }
+                }
+            } // VStack
+        }
     }
 }
 

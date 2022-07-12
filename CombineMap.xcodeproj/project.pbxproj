@@ -11,6 +11,11 @@
 		7F5141CA287DA5F000360895 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5141C9287DA5F000360895 /* ContentView.swift */; };
 		7F5141CC287DA5F300360895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5141CB287DA5F300360895 /* Assets.xcassets */; };
 		7F5141CF287DA5F300360895 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5141CE287DA5F300360895 /* Preview Assets.xcassets */; };
+		7F5141D7287DA62F00360895 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5141D6287DA62F00360895 /* PartialSheet */; };
+		7F5141D9287DA66300360895 /* FirstMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5141D8287DA66300360895 /* FirstMap.swift */; };
+		7F5141DB287DA69400360895 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5141DA287DA69400360895 /* MapView.swift */; };
+		7F5141DD287DA6DB00360895 /* HalfModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5141DC287DA6DB00360895 /* HalfModalView.swift */; };
+		7F5141DF287DA71900360895 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5141DE287DA71900360895 /* MapViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,10 @@
 		7F5141C9287DA5F000360895 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7F5141CB287DA5F300360895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F5141CE287DA5F300360895 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7F5141D8287DA66300360895 /* FirstMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMap.swift; sourceTree = "<group>"; };
+		7F5141DA287DA69400360895 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		7F5141DC287DA6DB00360895 /* HalfModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalView.swift; sourceTree = "<group>"; };
+		7F5141DE287DA71900360895 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5141D7287DA62F00360895 /* PartialSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +62,11 @@
 			isa = PBXGroup;
 			children = (
 				7F5141C7287DA5F000360895 /* CombineMapApp.swift */,
+				7F5141D8287DA66300360895 /* FirstMap.swift */,
 				7F5141C9287DA5F000360895 /* ContentView.swift */,
+				7F5141DA287DA69400360895 /* MapView.swift */,
+				7F5141DC287DA6DB00360895 /* HalfModalView.swift */,
+				7F5141DE287DA71900360895 /* MapViewModel.swift */,
 				7F5141CB287DA5F300360895 /* Assets.xcassets */,
 				7F5141CD287DA5F300360895 /* Preview Content */,
 			);
@@ -83,6 +97,9 @@
 			dependencies = (
 			);
 			name = CombineMap;
+			packageProductDependencies = (
+				7F5141D6287DA62F00360895 /* PartialSheet */,
+			);
 			productName = CombineMap;
 			productReference = 7F5141C4287DA5F000360895 /* CombineMap.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 7F5141BB287DA5F000360895;
+			packageReferences = (
+				7F5141D5287DA62F00360895 /* XCRemoteSwiftPackageReference "PartialSheet" */,
+			);
 			productRefGroup = 7F5141C5287DA5F000360895 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5141D9287DA66300360895 /* FirstMap.swift in Sources */,
 				7F5141CA287DA5F000360895 /* ContentView.swift in Sources */,
+				7F5141DD287DA6DB00360895 /* HalfModalView.swift in Sources */,
 				7F5141C8287DA5F000360895 /* CombineMapApp.swift in Sources */,
+				7F5141DB287DA69400360895 /* MapView.swift in Sources */,
+				7F5141DF287DA71900360895 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +363,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F5141D5287DA62F00360895 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F5141D6287DA62F00360895 /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F5141D5287DA62F00360895 /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7F5141BC287DA5F000360895 /* Project object */;
 }

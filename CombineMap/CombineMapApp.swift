@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 @main
-struct CombineMapApp: App {
+struct ExampleMapCombineApp: App {
+    let sheetManager: PartialSheetManager = PartialSheetManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FirstView()
+                .environmentObject(sheetManager)
         }
     }
 }
