@@ -45,6 +45,7 @@ struct ContentView: View {
                             .cornerRadius(60)
                             .padding(20.0)
                     }
+                    .padding(.bottom, 30)
                     .partialSheet(isPresented: $mapViewModel.isShowSearch) {
                         HalfModalView(isShowSearch: $mapViewModel.isShowSearch)
                     }

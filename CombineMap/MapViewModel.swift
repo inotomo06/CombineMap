@@ -33,11 +33,12 @@ final class MapViewModel: ObservableObject {
     
     init() {
         $region
+            .debounce(for: 1, scheduler: DispatchQueue.main)
             .sink { region in
                 // Reset the array to reposition the pins once the map has been moved.
                 self.mapItems.removeAll()
-                let pinReference = MapItems(coordinator: region.center, color: .orange)
-                self.mapItems.append(pinReference)
+                let pinItems = MapItems(coordinator: region.center, color: .orange)
+                self.mapItems.append(pinItems)
             }
             .store(in: &cancellable)
     }
